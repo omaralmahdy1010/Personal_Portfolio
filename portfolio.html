@@ -8,29 +8,72 @@
   <meta charset="utf-8">
   <title>Personal Portfolio</title>
 
+  <link rel="stylesheet" href="{{ get_asset_url('style.css') }}">
+
   {{ standard_header_includes }}
 </head>
 
+  
+
 <body>
 
-{% dnd_area "main_dnd", label="Main content" %}
+{% dnd_area "main", label="Main Content" %}
 
   {% dnd_section %}
     {% dnd_module path="./modules/hero", label="Hero" %}
     {% end_dnd_module %}
   {% end_dnd_section %}
 
-  {% dnd_section %}
+   {% dnd_section %}
     {% dnd_module path="./modules/about-me", label="About Me" %}
     {% end_dnd_module %}
   {% end_dnd_section %}
 
-  {% dnd_section %}
+   {% dnd_section %}
+    {% dnd_module path="./modules/projects", label="projects" %}
+    {% end_dnd_module %}
+  {% end_dnd_section %}
+
+   {% dnd_section %}
     {% dnd_module path="./modules/contact", label="Contact" %}
     {% end_dnd_module %}
   {% end_dnd_section %}
 
 {% end_dnd_area %}
+  
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+
+    // Smooth scrolling for internal links
+    const links = document.querySelectorAll('a[href^="#"]');
+
+    links.forEach(link => {
+      link.addEventListener("click", function (e) {
+        const targetId = this.getAttribute("href");
+
+        if (targetId.length > 1) {
+          const target = document.querySelector(targetId);
+
+          if (target) {
+            e.preventDefault();
+            target.scrollIntoView({ behavior: "smooth" });
+          }
+        }
+      });
+    });
+
+    // Visual feedback on primary CTA
+    const primaryCTA = document.querySelector('.hero-buttons a');
+
+    if (primaryCTA) {
+      primaryCTA.addEventListener("click", function () {
+        this.classList.add("clicked");
+      });
+    }
+
+  });
+</script>
+
 
 {{ standard_footer_includes }}
 

@@ -1,4 +1,67 @@
-<section>
-  <h1>{{ module.full_name }}</h1>
-  <h3>{{ module.job_title }}</h3>
+<section class="hero">
+  <div class="container text-center">
+
+    <h1 class="hero-title">
+      {{ module.Title }}
+    </h1>
+
+    {% if module.Name %}
+      <h3 class="hero-subtitle">
+        {{ module.Name }}
+      </h3>
+    {% endif %}
+
+    <div class="hero-buttons">
+      {% if module.button_text and module.button_link %}
+        <a href="{{ module.button_link }}" class="btn btn-light btn-lg">
+          {{ module.button_text }}
+        </a>
+      {% endif %}
+    </div>
+
+  </div>
 </section>
+
+.hero {
+  background: linear-gradient(135deg, #0f172a, #1e3a8a);
+  color: white;
+  padding: 140px 20px;
+}
+
+.hero-title {
+  font-size: 52px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.hero-subtitle {
+  font-size: 24px;
+  font-weight: 400;
+  margin-bottom: 30px;
+  opacity: 0.9;
+}
+
+.hero-description {
+  max-width: 800px;
+  margin: 0 auto 40px;
+  font-size: 18px;
+  line-height: 1.7;
+  opacity: 0.95;
+}
+
+.hero-buttons a {
+  min-width: 220px;
+}
+
+.hero {
+  padding: 120px 20px;
+}
+
+.hero-title span {
+  color: #93c5fd;
+}
+.hero-title {
+  font-size: 54px;
+  font-weight: 800;
+  line-height: 1.2;
+}

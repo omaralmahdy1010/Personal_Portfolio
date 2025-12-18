@@ -1,5 +1,79 @@
-<section>
-  <h2>Contact</h2>
-  <p>Email: {{ module.email }}</p>
-  <p>Phone: {{ module.phone }}</p>
+<section id="contact" class="contact-section">
+  <div class="container text-center">
+
+    <h2 class="contact-title">Contact</h2>
+
+    <p class="contact-description">
+      {{ module.contact_description }}
+    </p>
+
+    <div class="contact-info">
+      <p>
+        <strong>Email:</strong>
+        <a href="mailto:{{ module.email }}">
+          {{ module.email }}
+        </a>
+      </p>
+
+      <p>
+        <strong>Phone:</strong>
+        <a href="tel:{{ module.phone }}">
+          {{ module.phone }}
+        </a>
+      </p>
+    </div>
+
+    {% if module.availability_note %}
+      <p class="availability-note">
+        {{ module.availability_note }}
+      </p>
+    {% endif %}
+
+  </div>
 </section>
+
+.contact {
+  background: #f9fafb;
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.contact h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 30px;
+  color: #111827;
+}
+
+.contact-info {
+  max-width: 500px;
+  margin: auto;
+}
+
+.contact-info p {
+  font-size: 1.1rem;
+  margin-bottom: 15px;
+  color: #374151;
+}
+
+.contact-info span {
+  font-weight: 600;
+  margin-right: 8px;
+}
+
+.contact-info a {
+  color: #2563eb;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.contact-info a:hover {
+  color: #1d4ed8;
+  text-decoration: underline;
+}
+
+#contact {
+  text-align: center;
+  background: #f3f4f6;
+  padding: 60px 20px;
+}

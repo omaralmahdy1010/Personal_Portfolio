@@ -1,0 +1,9 @@
+body {
+  font-family: Arial, sans-serif;
+}
+
+section {
+  padding: 40px;
+  border-bottom: 1px solid #eee;
+}
+<link rel="stylesheet" href="{{ get_asset_url('./style.css') }}">
